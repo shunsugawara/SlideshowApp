@@ -11,7 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var autoButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
+
     var timer : Timer!
     var image : UIImage?
     var imageNumber:Int = 1
@@ -49,9 +53,17 @@ class ViewController: UIViewController {
     @IBAction func autoButton(_ sender: Any) {
 
         if self.timer == nil {
+            backButton.isEnabled = false
+            nextButton.isEnabled = false
+            autoButton.setTitle("停止", for:.normal)
+
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
 
         }else{
+            backButton.isEnabled = true
+            nextButton.isEnabled = true
+            autoButton.setTitle("再生", for:.normal)
+
             self.timer.invalidate()
             self.timer = nil
         }
@@ -64,6 +76,15 @@ class ViewController: UIViewController {
     
     //segue
     @objc func showDetailView(){
+        if self.timer != nil{
+            backButton.isEnabled = true
+            nextButton.isEnabled = true
+            autoButton.setTitle("再生", for:.normal)
+            
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        
         self.performSegue(withIdentifier: "showDetailSegue", sender: nil)
         
     }

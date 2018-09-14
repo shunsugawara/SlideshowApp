@@ -26,11 +26,11 @@
                                     <constraint firstAttribute="width" constant="200" id="xuv-d7-XbO"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-Vp-XLZ">
-                                <rect key="frame" x="54" y="479" width="267" height="36"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-Vp-XLZ">
+                                <rect key="frame" x="106" y="479" width="163" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLT-ej-VvM">
-                                        <rect key="frame" x="0.0" y="0.0" width="89" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="戻る"/>
                                         <connections>
@@ -38,15 +38,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgW-AV-LUc">
-                                        <rect key="frame" x="89" y="0.0" width="89" height="36"/>
+                                        <rect key="frame" x="61" y="0.0" width="41" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="再生/停止"/>
+                                        <state key="normal" title="再生"/>
                                         <connections>
                                             <action selector="autoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HZe-jZ-gb2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdJ-bx-89X">
-                                        <rect key="frame" x="178" y="0.0" width="89" height="36"/>
+                                        <rect key="frame" x="122" y="0.0" width="41" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="進む"/>
                                         <connections>
@@ -66,7 +66,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="autoButton" destination="HgW-AV-LUc" id="xTR-kC-yyV"/>
+                        <outlet property="backButton" destination="LLT-ej-VvM" id="pTC-mh-w9x"/>
                         <outlet property="imageView" destination="hFa-gy-BG8" id="FhR-bP-lod"/>
+                        <outlet property="nextButton" destination="qdJ-bx-89X" id="VXx-vZ-cBG"/>
                         <segue destination="kZh-xt-VF7" kind="showDetail" identifier="showDetailSegue" id="ONN-6e-Dfi"/>
                     </connections>
                 </viewController>
